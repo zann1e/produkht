@@ -1,8 +1,10 @@
 const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
+const path = require('path');
 
 const app = express();
+
+app.set('views', path.join(__dirname, 'app/templates'));
+app.set('view engine', 'ejs');
 
 const db = require("./app/models");
 db.mongoose
@@ -18,24 +20,6 @@ db.mongoose
         process.exit();
     });
 
-const corsOptions = {
-    origin: "http://localhost:8081"
-};
-
-app.use(cors(corsOptions));
-
-// parse requests of content-type - application/json
-app.use(bodyParser.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// simple route
-app.get("/", (req, res) => {
-    res.json({ message: "Welcome to zann application." });
-});
-
-require("./app/routes/turorial.routes")(app);
 require("./app/routes/whois.routes")(app);
 
 // set port, listen for requests

@@ -4,10 +4,10 @@ module.exports = app => {
     let router = require("express").Router();
 
     // Get all whois records
-    router.get("/", whois.findAll);
+    router.get("/", whois.index);
 
     // Retrieve a whois record
     router.get("/:id", whois.get);
 
-    app.use('/api/whois', router);
+    app.use('/', router);
 };

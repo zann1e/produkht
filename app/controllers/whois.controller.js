@@ -9,7 +9,7 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
     if (data) {
         Domain.findOne({domain: req.params.id})
             .then(data => {
-                res.send(data);
+                res.render('page', {data: data});
             })
             .catch(err => {
                 res.status(500).send({
@@ -33,7 +33,7 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
                     });
                     domain.save(domain)
                         .then(data => {
-                            res.send(data);
+                            res.render('page', {data: data});
                         })
                         .catch(err => {
                             res.status(500).send({
@@ -64,3 +64,7 @@ exports.findAll = (req, res) => {
             });
         });
 };
+
+exports.index = (req, res) => {
+    res.render('page');
+}
