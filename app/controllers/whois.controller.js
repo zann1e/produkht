@@ -66,5 +66,5 @@ exports.findAll = (req, res) => {
 };
 
 exports.index = (req, res) => {
-    res.render('page');
+    res.render('index');
 }
