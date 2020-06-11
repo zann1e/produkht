@@ -49,7 +49,7 @@
                     Latest added
                 </div>
                 <ul class="list-group"> <% data.forEach((data) => { %>
-                        <li class="list-group-item"><a href="/<%= data.domain %>"><%= data.domain %></a> <%= data.meta.title %></li>
+                        <li class="list-group-item"><a href="/<%= data.domain %>"><%= data.domain %></a> <%= + data.meta.title %></li>
                     <% })%>
                 </ul>
             </div>
