@@ -23,6 +23,8 @@
                     <span class="input-group-text">https://</span>
                 </div>
                 <input
+                        name="search"
+                        id="search"
                         type="text"
                         class="form-control"
                         placeholder="Domain.com"
@@ -31,6 +33,7 @@
                     <button
                             class="btn btn-outline-secondary"
                             type="button"
+                            onclick="javascript:document.location = '/' + document.getElementById('search').value"
                     >
                         Search
                     </button>
