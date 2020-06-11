@@ -51,11 +51,11 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
 
 });
 
-exports.findAll = (req, res) => {
+exports.index = (req, res) => {
 
     Domain.find().limit(20).sort({createdAt:-1})
         .then(data => {
-            res.send(data);
+            res.render('index', {data: data});
         })
         .catch(err => {
             res.status(500).send({
@@ -64,7 +64,3 @@ exports.findAll = (req, res) => {
             });
         });
 };
-
-exports.index = (req, res) => {
-    res.render('index');
-}
