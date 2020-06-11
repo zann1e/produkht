@@ -85,6 +85,20 @@
         </div>
     </div>
 </div>
+    <div class="list row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-white bg-secondary">
+                    <h3>Meta Tags</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <% for (const property in data.meta.meta) { %>
+                        <li class="list-group-item"> <%= property %>: <%= data.meta.meta[property] %> </li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <footer class="page-footer font-small blue">
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
