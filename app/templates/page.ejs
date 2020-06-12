@@ -97,7 +97,7 @@
                 HTTP Headers
             </div>
             <div class="card-body">
-                <p class="card-subtitle mb-2 text-muted">HTTP header fields are components of the header section of request and response messages in the Hypertext Transfer Protocol (HTTP). They define the operating parameters of an HTTP transaction.</p>
+                <p class="lead">HTTP header fields are components of the header section of request and response messages in the Hypertext Transfer Protocol (HTTP). They define the operating parameters of an HTTP transaction.</p>
                 <ul class="list-group list-group-flush">
                     <% for (const property in data.meta.headers) { %>
                         <li class="list-group-item"> <strong><%= property %></strong>: <%= data.meta.headers[property] %> </li>
@@ -118,7 +118,7 @@
                 Domain Whois
             </div>
             <div class="card-body">
-                <p class="card-subtitle mb-2 text-muted">WHOIS (pronounced as the phrase "who is") is a query and response protocol that is widely used for querying databases that store the registered users or assignees of an Internet resource, such as a domain name, an IP address block or an autonomous system, but is also used for a wider range of other information. The protocol stores and delivers database content in a human-readable format.</p>
+                <p class="lead">WHOIS (pronounced as the phrase "who is") is a query and response protocol that is widely used for querying databases that store the registered users or assignees of an Internet resource, such as a domain name, an IP address block or an autonomous system, but is also used for a wider range of other information. The protocol stores and delivers database content in a human-readable format.</p>
                                <pre>
                                  <%= data.whois %>
                                </pre>
@@ -137,7 +137,7 @@
                     Meta Tags
                 </div>
                 <div class="card-body">
-                    <p class="card-subtitle mb-2 text-muted">Meta elements are tags used in HTML and XHTML documents to provide structured metadata about a Web page. They are part of a web page's head section. Multiple Meta elements with different attributes can be used on the same page. Meta elements can be used to specify page description, keywords and any other metadata not provided through the other head elements and attributes.</p>
+                    <p class="lead">Meta elements are tags used in HTML and XHTML documents to provide structured metadata about a Web page. They are part of a web page's head section. Multiple Meta elements with different attributes can be used on the same page. Meta elements can be used to specify page description, keywords and any other metadata not provided through the other head elements and attributes.</p>
                     <ul class="list-group list-group-flush">
                         <% for (const property in data.meta.meta) { %>
                             <li class="list-group-item"> <strong><%= property %></strong>: <%= data.meta.meta[property] %> </li>
