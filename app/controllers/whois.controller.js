@@ -33,7 +33,7 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
                         whois: data,
                         meta: metainfo,
                     });
-                    domain.save(domain)
+                    domain.save({checkKeys: false})
                         .then(data => {
                             res.render('page', {data: data});
                         })
