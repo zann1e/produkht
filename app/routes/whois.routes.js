@@ -9,5 +9,8 @@ module.exports = app => {
     // Retrieve a whois record
     router.get("/:id", whois.get);
 
+    // Retrieve a whois record
+    router.get("/sitemap/index", whois.sitemap);
+
     app.use('/', router);
 };

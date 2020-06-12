@@ -64,3 +64,17 @@ exports.index = (req, res) => {
             });
         });
 };
+
+exports.sitemap = (req, res) => {
+
+    Domain.find().limit(50000).sort({createdAt:-1})
+        .then(data => {
+            res.render('sitemap', {data: data});
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving tutorials."
+            });
+        });
+};
