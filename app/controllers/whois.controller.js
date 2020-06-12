@@ -20,14 +20,15 @@ exports.get = (req, res) => Domain.exists({domain: req.params.id}, function (err
             });
     }
     else {
-        // Create a Tutorial
+        // Lookup for domain whois.
         whois.lookup(req.params.id, function (err, data) {
             console.log(req.params.id, data);
             if (data) {
+                // If no domain is registered ask user to create one.
                 let noDomain = data.search(notfound);
-                console.log(noDomain);
                 if (noDomain !== -1) {res.render('nodomain', {data: data, domain: req.params.id}); return; }
-                let meta = metafetch.fetch(req.params.id, function(err, metainfo) {
+                // If domain is registered save the data.
+                metafetch.fetch(req.params.id, function(err, metainfo) {
                     let domain = new Domain({
                         domain: req.params.id,
                         whois: data,
