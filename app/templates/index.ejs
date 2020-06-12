@@ -29,33 +29,35 @@
     </div>
 </nav>
 <div class="container mt-3">
-    <div class="jumbotron">
-        <div class="container">
-            <h1 class="display-1">Produkht</h1>
-            <p class="lead">Produkht - check website technologies and get insights on how its made.</p>
-        </div>
-    </div>
-    <div class="list row">
-        <div class="col-md-12">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">https://</span>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>Website Analyzer</h1>
+                    <p>Check website technologies and get insights on how its made: DNS, Whois, Meta Tags.</p>
+                    <div class="input-group">
+                        <input
+                                name="search"
+                                id="search"
+                                type="text"
+                                class="form-control"
+                                placeholder="ex. domain.com"
+                        />
+                        <div class="input-group-append">
+                            <button
+                                    class="btn btn-outline-secondary"
+                                    type="button"
+                                    onclick="document.location = '/' + document.getElementById('search').value"
+                            >
+                                Search
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <input
-                        name="search"
-                        id="search"
-                        type="text"
-                        class="form-control"
-                        placeholder="ex. domain.com"
-                />
-                <div class="input-group-append">
-                    <button
-                            class="btn btn-outline-secondary"
-                            type="button"
-                            onclick="document.location = '/' + document.getElementById('search').value"
-                    >
-                        Search
-                    </button>
+                <div class="col-md-5">
+                    <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/web-tools-1-732728.png" />
                 </div>
             </div>
         </div>
