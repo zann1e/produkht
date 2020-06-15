@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="<%= data.domain %> - <%= data.meta.description %>" />
-    <title>💻 <%= data.domain %> - <%= data.meta.title %></title>
+    <meta name="description" content="<%= data.domain %> - <%= data.meta && data.meta.description  %>" />
+    <title>💻 <%= data.domain %> - <%= data.meta && data.meta.title %></title>
     <meta name="google-site-verification" content="oZBfhfG3EVRtWIxK9Twxitf5dhx_O6VnD34p5p2aNgU" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
     <script data-ad-client="ca-pub-2325580012296666" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -60,11 +60,11 @@
                     <small class="text-muted">info</small>
                 </h3>
             </div>
-            <img class="card-img-top" src="<%= data.meta.image %>" />
+            <img class="card-img-top" src="<%= data.meta && data.meta.image %>" />
             <div class="card-body">
-                <h5 class="card-title"><%= data.meta.title %></h5>
-                <p class="card-text"><%= data.meta.description %></p>
-                <p class="card-text"><small class="text-muted"><%= data.domain %></small></p>
+                <h5 class="card-title"><%= data.meta && data.meta.title %></h5>
+                <p class="card-text"><%= data.meta && data.meta.description %></p>
+                <p class="card-text"><small class="text-muted"><%= data.meta && data.domain %></small></p>
             </div>
         </div>
     </div>
@@ -84,7 +84,8 @@
         </div>
     </div>
 </div>
-<div class="list row">
+    <% if (data.meta) { %>
+    <div class="list row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header text-white bg-primary">
@@ -105,6 +106,7 @@
         </div>
     </div>
 </div>
+        <% } %>
 <div class="list row">
     <div class="col-md-12">
         <div class="card">
@@ -122,6 +124,7 @@
         </div>
     </div>
 </div>
+    <% if (data.meta) { %>
     <div class="list row">
         <div class="col-md-12">
             <div class="card">
@@ -143,6 +146,7 @@
             </div>
         </div>
     </div>
+    <% } %>
 </div>
 <footer class="page-footer font-small blue">
     <div class="footer-copyright text-center py-3">© 2020 Copyright:
