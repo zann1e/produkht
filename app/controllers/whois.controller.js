@@ -58,6 +58,7 @@ exports.index = (req, res) => {
 
     Domain.find().limit(20).sort({createdAt:-1})
         .then(data => {
+            res.set('Link', '<a href="http://produkht.com">Produkht</a>');
             res.render('index', {data: data});
         })
         .catch(err => {
