@@ -3,6 +3,14 @@ module.exports = app => {
 
     let router = require("express").Router();
 
+    app.get('/*', function(req, res, next) {
+        if (req.headers.host.match(/^www/) !== null ) {
+            res.redirect(req.protocol + req.headers.host.replace(/^www\./, '') + req.url);
+        } else {
+            next();
+        }
+    })
+
     // Get all whois records
     router.get("/", whois.index);
 
