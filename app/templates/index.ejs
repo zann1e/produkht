@@ -66,12 +66,13 @@
     <div class="list row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">
-                    Recently checked <domains>  </domains>
+                <div class="card-header text-white bg-dark-blue">
+                    Recently checked domains
                 </div>
                 <ul class="list-group"> <% data.forEach((data) => { %>
-                        <li class="list-group-item">
-                            <a href="/<%= data.domain %>"><%= data.domain %></a></li>
+                            <a class="list-group-item list-group-item-action" href="/<%= data.domain %>">
+                                <h5 class="mb-1"><%= data.domain %></h5>
+                            </a>
                     <% })%>
                 </ul>
             </div>
