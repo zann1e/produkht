@@ -65,30 +65,17 @@
                     <small class="text-muted">domain info</small>
                 </h3>
             </div>
+            <% if (data.meta) { %>
             <img class="card-img-top" src="<%= data.meta && data.meta.image %>" />
             <div class="card-body">
                 <h5 class="card-title"><%= data.meta && data.meta.title %></h5>
                 <p class="card-text"><%= data.meta && data.meta.description %></p>
                 <p class="card-text"><small class="text-muted"><%= data.meta && data.domain %></small></p>
             </div>
+            <% } %>
         </div>
     </div>
 </div>
-    <div class="list row">
-        <div class="col-md-12">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- Top -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-2325580012296666"
-                 data-ad-slot="5737352428"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
-    </div>
     <div class="list row">
         <div class="col-md-12">
             <div class="card">
@@ -100,7 +87,6 @@
                     Who is the owner of <%= data.domain %>
                 </div>
                 <div class="card-body">
-                    <p class="lead">WHOIS (pronounced as the phrase "who is") is a query and response protocol that is widely used for querying databases that store the registered users or assignees of an Internet resource, such as a domain name, an IP address block or an autonomous system, but is also used for a wider range of other information. The protocol stores and delivers database content in a human-readable format.</p>
                     <pre><%= data.whois %></pre>
                 </div>
             </div>
@@ -118,7 +104,6 @@
                 HTTP Headers
             </div>
             <div class="card-body">
-                <p class="lead">HTTP header fields are components of the header section of request and response messages in the Hypertext Transfer Protocol (HTTP). They define the operating parameters of an HTTP transaction.</p>
                 <ul class="list-group list-group-flush">
                     <% for (const property in data.meta.headers) { %>
                         <li class="list-group-item"> <strong><%= property %></strong>: <%= data.meta.headers[property] %> </li>
@@ -141,7 +126,6 @@
                     Meta Tags
                 </div>
                 <div class="card-body">
-                    <p class="lead">Meta elements are tags used in HTML and XHTML documents to provide structured metadata about a Web page. They are part of a web page's head section. Multiple Meta elements with different attributes can be used on the same page. Meta elements can be used to specify page description, keywords and any other metadata not provided through the other head elements and attributes.</p>
                     <ul class="list-group list-group-flush">
                         <% for (const property in data.meta.meta) { %>
                             <li class="list-group-item"> <strong><%= property %></strong>: <%= data.meta.meta[property] %> </li>
